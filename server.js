@@ -2,7 +2,7 @@
 //  PassForge – server.js
 //  Main Express Server Entry Point
 // =============================================
-
+const path = require('path');
 const express = require('express');
 const cors    = require('cors');
 const dotenv  = require('dotenv');
@@ -30,13 +30,8 @@ app.use(express.json()); // Parse incoming JSON bodies
 // ---------- Routes ----------
 app.use('/api/password', passwordRoutes);
 
-// ---------- Health Check Route ----------
 app.get('/', (req, res) => {
-  res.json({
-    status: 'OK',
-    message: 'PassForge API is running 🔐',
-    version: '1.0.0'
-  });
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // ---------- 404 Handler ----------
