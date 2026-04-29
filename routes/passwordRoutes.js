@@ -6,8 +6,7 @@
 const express  = require('express');
 const router   = express.Router();
 const crypto   = require('crypto');
-const Password = require('../models/Password');
-
+const Password = require('../models/password');
 // ---------- Character Sets ----------
 const CHARSET = {
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
