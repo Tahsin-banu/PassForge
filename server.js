@@ -25,6 +25,9 @@ app.use(cors({
   methods: ['GET', 'POST', 'DELETE']
 }));
 
+app.use(express.static(path.join(__dirname, '.')));
+
+
 app.use(express.json()); // Parse incoming JSON bodies
 
 // ---------- Routes ----------
