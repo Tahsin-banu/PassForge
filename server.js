@@ -14,6 +14,22 @@ const passwordRoutes    = require('./routes/passwordRoutes');
 dotenv.config();
 
 const app  = express();
+// =============================================
+//  PassForge – server.js
+//  Main Express Server Entry Point
+// =============================================
+
+const express = require('express');
+const cors    = require('cors');
+const dotenv  = require('dotenv');
+
+const connectDB         = require('./db');
+const passwordRoutes    = require('./routes/passwordRoutes');
+
+// Load environment variables from .env
+dotenv.config();
+
+const app  = express();
 const PORT = process.env.PORT || 5000;
 
 // ---------- Connect to MongoDB ----------
@@ -25,16 +41,18 @@ app.use(cors({
   methods: ['GET', 'POST', 'DELETE']
 }));
 
-app.use(express.static(path.join(__dirname, '.')));
-
-
 app.use(express.json()); // Parse incoming JSON bodies
 
 // ---------- Routes ----------
 app.use('/api/password', passwordRoutes);
 
+// ---------- Health Check Route ----------
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.json({
+    status: 'OK',
+    message: 'PassForge API is running 🔐',
+    version: '1.0.0'
+  });
 });
 
 // ---------- 404 Handler ----------

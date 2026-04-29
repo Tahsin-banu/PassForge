@@ -255,7 +255,7 @@ document.getElementById('clearBtn').addEventListener('click', () => {
 async function saveToBackend(pwd, len, upId, loId, numId, symId) {
   try {
     const lvl = calcStrength(pwd);
-    await fetch('https://pass-forge-pi.vercel.app/', {
+    await fetch('http://localhost:5000/api/password/generate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
