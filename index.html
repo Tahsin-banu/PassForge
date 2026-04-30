@@ -25,10 +25,9 @@
     <button class="theme-btn" id="themeBtn"><i class="fas fa-moon"></i></button>
   </nav>
 
-  <!-- ==================== HOME SECTION ==================== -->
+  <!-- HOME SECTION -->
   <section class="section active" id="home">
     <div class="main-layout">
-      <!-- Left -->
       <div class="left-panel">
         <h1 class="hero-title">Craft <span class="grad-text">Strong,</span><br/><span class="grad-text2">Secure</span> Passwords<br/>Instantly <span>🔒</span></h1>
         <p class="hero-sub">PassForge helps you generate powerful passwords and keep your digital life safe and secure.</p>
@@ -44,18 +43,18 @@
         </div>
         <div class="copy-r">© 2026 <span class="grad-text">PassForge</span>. All rights reserved.</div>
       </div>
-      <!-- Right — Generator Card -->
+
       <div class="right-panel">
         <div class="card">
           <div class="pass-label">Your Password</div>
           <div class="pass-box">
             <span class="pass-text" id="passText">Click Generate to forge your password</span>
             <div class="pass-icons">
-              <button class="icon-btn" id="toggleBtn"><i class="fas fa-eye"></i></button>
-              <button class="icon-btn" id="copyIconBtn"><i class="fas fa-copy"></i></button>
+              <button class="icon-btn" id="toggleBtn" type="button"><i class="fas fa-eye"></i></button>
+              <button class="icon-btn" id="copyIconBtn" type="button"><i class="fas fa-copy"></i></button>
             </div>
           </div>
-          <!-- Strength -->
+
           <div class="strength-area">
             <div class="strength-left">
               <div class="s-label">Password Strength</div>
@@ -67,16 +66,16 @@
               </div>
             </div>
             <div class="str-badge" id="strBadge"><i class="fas fa-shield-halved"></i><span id="strLabel">—</span></div>
-            <button class="copy-pill" id="copyBtn"><i class="fas fa-copy"></i> Copy</button>
+            <button class="copy-pill" id="copyBtn" type="button"><i class="fas fa-copy"></i> Copy</button>
           </div>
-          <!-- Slider -->
+
           <div class="len-label">Password Length: <strong id="lenNum">16</strong></div>
           <div class="slider-row">
             <span class="sl-end">4</span>
             <input type="range" id="lengthSlider" min="4" max="32" value="16"/>
             <span class="sl-end">32</span>
           </div>
-          <!-- Options -->
+
           <div class="opts-grid">
             <label class="opt-card active" id="optUp">
               <input type="checkbox" id="chkUp" checked/>
@@ -103,9 +102,9 @@
               <div class="opt-sub">Include symbols (!@#$%^&*)</div>
             </label>
           </div>
-          <!-- Generate -->
-          <button class="gen-btn" id="generateBtn"><i class="fas fa-wand-magic-sparkles"></i> Generate Password</button>
-          <!-- Tips strip -->
+
+          <button class="gen-btn" id="generateBtn" type="button"><i class="fas fa-wand-magic-sparkles"></i> Generate Password</button>
+
           <div class="tips-strip" id="tipsStrip">
             <span class="tip-icon">💡</span>
             <div class="tip-body">
@@ -116,14 +115,14 @@
                 <span><i class="fas fa-check"></i> Avoid using personal information</span>
               </div>
             </div>
-            <button class="tip-close" onclick="document.getElementById('tipsStrip').style.display='none'">✕</button>
+            <button class="tip-close" type="button" onclick="document.getElementById('tipsStrip').style.display='none'">✕</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== GENERATOR SECTION ==================== -->
+  <!-- GENERATOR SECTION -->
   <section class="section" id="generator">
     <div class="page-wrap">
       <h2 class="page-title"><i class="fas fa-wand-magic-sparkles"></i> Password Generator</h2>
@@ -132,8 +131,8 @@
         <div class="pass-box">
           <span class="pass-text" id="passText2">Your password will appear here</span>
           <div class="pass-icons">
-            <button class="icon-btn" id="toggleBtn2"><i class="fas fa-eye"></i></button>
-            <button class="icon-btn" id="copyIconBtn2"><i class="fas fa-copy"></i></button>
+            <button class="icon-btn" id="toggleBtn2" type="button"><i class="fas fa-eye"></i></button>
+            <button class="icon-btn" id="copyIconBtn2" type="button"><i class="fas fa-copy"></i></button>
           </div>
         </div>
         <div class="strength-area">
@@ -145,7 +144,7 @@
             </div>
           </div>
           <div class="str-badge" id="strBadge2"><i class="fas fa-shield-halved"></i><span id="strLabel2">—</span></div>
-          <button class="copy-pill" id="copyBtn2"><i class="fas fa-copy"></i> Copy</button>
+          <button class="copy-pill" id="copyBtn2" type="button"><i class="fas fa-copy"></i> Copy</button>
         </div>
         <div class="len-label">Length: <strong id="lenNum2">16</strong> characters</div>
         <div class="slider-row">
@@ -171,27 +170,30 @@
             <div class="opt-name">Symbols</div><div class="opt-sub">!@#$%^&*</div>
           </label>
         </div>
-        <button class="gen-btn" id="generateBtn2"><i class="fas fa-wand-magic-sparkles"></i> Generate Password</button>
+        <button class="gen-btn" id="generateBtn2" type="button"><i class="fas fa-wand-magic-sparkles"></i> Generate Password</button>
       </div>
     </div>
   </section>
 
-  <!-- ==================== HISTORY SECTION ==================== -->
+  <!-- HISTORY SECTION -->
   <section class="section" id="history">
     <div class="page-wrap">
       <h2 class="page-title"><i class="fas fa-clock-rotate-left"></i> Password History</h2>
       <p class="page-sub">Your recently generated passwords are listed below.</p>
       <div class="hist-toolbar">
         <span id="histCount" class="hist-count">0 passwords generated</span>
-        <button class="clear-btn" id="clearBtn"><i class="fas fa-trash"></i> Clear History</button>
+        <button class="clear-btn" id="clearBtn" type="button"><i class="fas fa-trash"></i> Clear History</button>
       </div>
       <div class="hist-list" id="histList">
-        <div class="empty-state"><i class="fas fa-shield-halved"></i><p>No passwords yet.<br/>Go to Generator and create one!</p></div>
+        <div class="empty-state">
+          <i class="fas fa-shield-halved"></i>
+          <p>No passwords yet.<br/>Go to Generator and create one!</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== TIPS SECTION ==================== -->
+  <!-- TIPS SECTION -->
   <section class="section" id="tips">
     <div class="page-wrap">
       <h2 class="page-title"><i class="fas fa-lightbulb"></i> Password Tips</h2>
@@ -207,7 +209,7 @@
     </div>
   </section>
 
-  <!-- ==================== ABOUT SECTION ==================== -->
+  <!-- ABOUT SECTION -->
   <section class="section" id="about">
     <div class="page-wrap about-wrap">
       <div class="about-hero">
